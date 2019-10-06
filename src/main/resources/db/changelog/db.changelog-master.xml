@@ -1,0 +1,58 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="
+                      http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd
+                      http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="1" author="anuj">
+		<createTable tableName="Organization">
+			<column name="ORGID" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="NAME" type="VARCHAR(140)">
+				<constraints nullable="false" />
+			</column>
+			<column name="ADDRESS" type="VARCHAR(140)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PHONE" type="VARCHAR(10)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="2" author="anuj">
+		<createTable tableName="User">
+			<column name="USERID" type="BIGINT" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="FIRSTNAME" type="VARCHAR(140)">
+				<constraints nullable="false" />
+			</column>
+			<column name="LASTNAME" type="VARCHAR(140)">
+				<constraints nullable="false" />
+			</column>
+			<column name="EMAIL" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="ADDRESS" type="VARCHAR(140)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PHONE" type="VARCHAR(10)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="3" author="anuj">
+		<createTable tableName="OrganizationUser">
+			<column name="ORGID" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="USERID" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<!-- To learn how to add a new column take a look at http://www.liquibase.org/documentation/changes/add_column.html -->
+</databaseChangeLog>
